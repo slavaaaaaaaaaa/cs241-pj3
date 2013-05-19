@@ -40,8 +40,9 @@
 public class main {
 	// 1. Construct a main driver class that uses a switch statement and
 	// inheritance to run different sort methods.
-	public static boolean	DEBUG	= true;
+	public static boolean	DEBUG	= false;
 	private static double	array[];
+	private static Sort		sortMachine;
 	
 	public static void main(String[] args) {
 		if (DEBUG) {
@@ -58,19 +59,29 @@ public class main {
 			}
 		}
 		
-		String sortkind = "";
-		Sort sortMachine;
-		switch (sortkind) {
-			case "insertion":
+		try {
+			array = new double[(int) Math.pow(10, Integer.parseInt(args[1]))];
+		} catch (Exception e) {
+			System.out
+					.println("Wrong input. Should be of type \"java main [q/i/h/m] [1...4]\"");
+			System.exit(1);
+		}
+		
+		for (int i = 0; i < array.length; i++) {
+			array[i] = Math.random();
+		}
+		
+		switch (args[0]) {
+			case "i":
 				sortMachine = new InsertionSort();
 				break;
-			case "heap":
+			case "h":
 				sortMachine = new HeapSort();
 				break;
-			case "merge":
+			case "m":
 				sortMachine = new MergeSort();
 				break;
-			case "quick":
+			case "q":
 				sortMachine = new QuickSort();
 				break;
 		}
