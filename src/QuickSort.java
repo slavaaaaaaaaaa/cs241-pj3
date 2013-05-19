@@ -30,6 +30,7 @@
 public class QuickSort implements Sort {
 	public long sortMe(double[] array) {
 		// 1. Call recursive quicksort procedure with left=0 and right=n-1
+		st.reset();
 		quickSort(array, 0, array.length - 1);
 		return st.getElapsedTime();
 	}
@@ -55,11 +56,17 @@ public class QuickSort implements Sort {
 		double pivot = data[(left + right) / 2];
 		
 		while (i <= j) {
-			while (data[i] < pivot)
+			while (data[i] < pivot) {
+				st.addComparison();
 				i++;
-			while (data[j] > pivot)
+			}
+			while (data[j] > pivot) {
+				st.addComparison();
 				j--;
+			}
 			if (i <= j) {
+				st.addComparison();
+				st.addMoves(3);
 				double temp = data[i];
 				data[i] = data[j];
 				data[j] = temp;

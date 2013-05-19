@@ -14,6 +14,7 @@ public class HeapSort implements Sort {
 	private double[]	heap;
 	
 	public long sortMe(double[] array) {
+		st.reset();
 		heap = array;
 		size = heap.length;
 		// 1. Convert list into heap
@@ -31,6 +32,7 @@ public class HeapSort implements Sort {
 	}
 	
 	public void swap(int a, int b) {
+		st.addMoves(2);
 		double temp = heap[a];
 		heap[a] = heap[b];
 		heap[b] = temp;
@@ -41,6 +43,7 @@ public class HeapSort implements Sort {
 		int childTwo = parent * 2 + 2;
 		if (hasChild(parent))
 			if (childTwo < size()) {
+				st.addComparison();
 				if (heap[parent] <= heap[childTwo]) {
 					if (!verifySorted(childTwo))
 						return false;
@@ -56,6 +59,7 @@ public class HeapSort implements Sort {
 			int smallerChild = smallerChild(parent);
 			// 2.1. delete minimum element and add it to end of new list
 			if (heap[parent] > heap[smallerChild]) {
+				st.addComparison();
 				swap(parent, smallerChild);
 				siftDown(smallerChild);
 			}
@@ -64,6 +68,7 @@ public class HeapSort implements Sort {
 	
 	public int smallerChild(int parent) {
 		if (parent * 2 + 2 < size()) {
+			st.addComparison();
 			if (heap[parent * 2 + 1] < heap[parent * 2 + 2])
 				return parent * 2 + 1;
 			else

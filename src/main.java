@@ -7,7 +7,7 @@
 //
 // Test them on random arrays of increasing orders of magnitude to examine their scaling behavior. 
 // 		main class
-//		TODO
+//		Done
 //
 // Graph your results. 
 //		attached project description
@@ -24,9 +24,11 @@
 //
 // 2. Instrument each algorithm to count comparisons, moves and elapsed time by constructing a SortTimer class as discussed in class. 
 // Use System.nanoTime() and divide by 1,000 to get the clock time in microseconds.
+//  Done.
 //
 // 3. Run your code on random arrays of size n = 10^i, i = 1. . .4. Run five instances of each sample size and take the average 
 // of each measure.
+// 
 //
 // 4. Plot the elapsed time and comparison count against n using a decimal logarithmic scale on each axis.
 //
@@ -85,15 +87,16 @@ public class main {
 					sortMachine = new QuickSort();
 					break;
 			}
-			System.out.print("\tn\tMicrosecs\tComparisons\tMoves\n");
-			for (int j = 0; j < arraySize; j++) {
+			System.out.print("n\tMicrosecs\tComparisons\tMoves\n");
+			for (int j = 1; j < arraySize + 1; j++) {
 				array = new double[(int) Math.pow(10, j)];
 				for (int i = 0; i < array.length; i++) {
 					array[i] = Math.random();
 				}
-				sortMachine.st.reset();
-				System.out.print("\t" + (int) Math.pow(10, j) + "\t"
-						+ sortMachine.sortMe(array));
+				System.out.print((int) Math.pow(10, j) + "\t"
+						+ (sortMachine.sortMe(array) / 1000) + "\t\t"
+						+ sortMachine.st.getComparisons() + "\t\t"
+						+ sortMachine.st.getMoves() + "\n");
 			}
 		}
 		// TODO main

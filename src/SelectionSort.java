@@ -10,16 +10,19 @@
 
 public class SelectionSort implements Sort {
 	public long sortMe(double[] array) {
+		st.reset();
 		int max = 0;
 		// 1. for i = n-1 down to 1
 		for (int i = array.length - 1; i > 0; i--) {
 			for (int j = 0; j < i; j++) {
 				// 1.1. set max to the index of largest element in the range 0
 				// to i
+				st.addComparison();
 				if (array[j] > array[max])
 					max = j;
 			}
 			// 1.2. swap elements at positions i and max
+			st.addMoves(2);
 			double temp = array[i];
 			array[i] = array[max];
 			array[max] = temp;
