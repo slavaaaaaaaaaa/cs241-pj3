@@ -11,7 +11,7 @@
 // 3. return new list
 
 public class BinSort implements Sort {
-	public double[] sortMe(double[] array) {
+	public long sortMe(double[] array) {
 		// TODO Auto-generated method stub
 		return array;
 	}

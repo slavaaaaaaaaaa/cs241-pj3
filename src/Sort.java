@@ -1,3 +1,5 @@
 public interface Sort {
-	public double[] sortMe(double array[]);
+	SortTimer	st	= new SortTimer();
+	
+	public long sortMe(double array[]);
 }

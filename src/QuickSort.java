@@ -28,9 +28,10 @@
 // 5. return pos
 
 public class QuickSort implements Sort {
-	public double[] sortMe(double[] array) {
+	public long sortMe(double[] array) {
 		// 1. Call recursive quicksort procedure with left=0 and right=n-1
-		return quickSort(array, 0, array.length - 1);
+		quickSort(array, 0, array.length - 1);
+		return st.getElapsedTime();
 	}
 	
 	private double[] quickSort(double[] data, int left, int right) {

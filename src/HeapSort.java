@@ -13,7 +13,7 @@ public class HeapSort implements Sort {
 	private int			size	= 0;
 	private double[]	heap;
 	
-	public double[] sortMe(double[] array) {
+	public long sortMe(double[] array) {
 		heap = array;
 		size = heap.length;
 		// 1. Convert list into heap
@@ -26,7 +26,8 @@ public class HeapSort implements Sort {
 		if (main.DEBUG)
 			System.out.println(verifySorted(0));
 		// 3. return new list
-		return heap;
+		// return heap;
+		return st.getElapsedTime();
 	}
 	
 	public void swap(int a, int b) {

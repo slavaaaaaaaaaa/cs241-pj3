@@ -43,6 +43,7 @@ public class main {
 	public static boolean	DEBUG	= false;
 	private static double	array[];
 	private static Sort		sortMachine;
+	private static int		arraySize;
 	
 	public static void main(String[] args) {
 		if (DEBUG) {
@@ -51,39 +52,49 @@ public class main {
 			// Sort is = new InsertionSort(); // completed & tested
 			// Sort is = new HeapSort(); // completed & tested
 			// Sort is = new MergeSort(); // completed & tested
-			Sort is = new QuickSort(); // completed & tested
-			
-			double sorted[] = is.sortMe(array);
-			for (int i = 0; i < array.length; i++) {
-				System.out.print(sorted[i] + ", ");
+			// Sort is = new QuickSort(); // completed & tested
+			// Sort is = new SelectionSort(); // completed & tested
+			// double sorted[] = is.sortMe(array);
+			// for (int i = 0; i < array.length; i++) {
+			// System.out.print(sorted[i] + ", ");
+			// }
+		} else {
+			try {
+				arraySize = Integer.parseInt(args[1]);
+			} catch (Exception e) {
+				System.out
+						.println("Wrong input. Should be of type \"java main [q/s/h/m] [1...4]\"");
+				System.exit(1);
 			}
-		}
-		
-		try {
-			array = new double[(int) Math.pow(10, Integer.parseInt(args[1]))];
-		} catch (Exception e) {
-			System.out
-					.println("Wrong input. Should be of type \"java main [q/i/h/m] [1...4]\"");
-			System.exit(1);
-		}
-		
-		for (int i = 0; i < array.length; i++) {
-			array[i] = Math.random();
-		}
-		
-		switch (args[0]) {
-			case "i":
-				sortMachine = new InsertionSort();
-				break;
-			case "h":
-				sortMachine = new HeapSort();
-				break;
-			case "m":
-				sortMachine = new MergeSort();
-				break;
-			case "q":
-				sortMachine = new QuickSort();
-				break;
+			
+			switch (args[0]) {
+				case "s":
+					System.out.println("Selection Sort");
+					sortMachine = new SelectionSort();
+					break;
+				case "h":
+					System.out.println("Heap Sort");
+					sortMachine = new HeapSort();
+					break;
+				case "m":
+					System.out.println("Merge Sort");
+					sortMachine = new MergeSort();
+					break;
+				case "q":
+					System.out.println("Quick Sort");
+					sortMachine = new QuickSort();
+					break;
+			}
+			System.out.print("\tn\tMicrosecs\tComparisons\tMoves\n");
+			for (int j = 0; j < arraySize; j++) {
+				array = new double[(int) Math.pow(10, j)];
+				for (int i = 0; i < array.length; i++) {
+					array[i] = Math.random();
+				}
+				sortMachine.st.reset();
+				System.out.print("\t" + (int) Math.pow(10, j) + "\t"
+						+ sortMachine.sortMe(array));
+			}
 		}
 		// TODO main
 	}

@@ -27,9 +27,10 @@
 // 4. return new list
 
 public class MergeSort implements Sort {
-	public double[] sortMe(double[] array) {
+	public long sortMe(double[] array) {
 		// 1. Call recursive mergesort procedure with left=0 and right=n-1
-		return mergeSort(array, 0, array.length);
+		mergeSort(array, 0, array.length);
+		return st.getElapsedTime();
 	}
 	
 	public double[] mergeSort(double[] data, int left, int right) {

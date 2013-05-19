@@ -10,7 +10,7 @@
 // 1.3. insert current value into its correct position relative to other elements in range
 
 public class InsertionSort implements Sort {
-	public double[] sortMe(double[] array) {
+	public long sortMe(double[] array) {
 		// 1. for i = 1 to n-1
 		for (int i = 0; i < array.length; i++) {
 			double current = array[i];
@@ -26,6 +26,7 @@ public class InsertionSort implements Sort {
 			// other elements in range
 			array[j] = current;
 		}
-		return array;
+		// return array;
+		return st.getElapsedTime();
 	}
 }
