@@ -10,9 +10,9 @@
 // 3. return new list
 
 public class HeapSort implements Sort {
-	public boolean sortMe(double[] array) {
+	public double[] sortMe(double[] array) {
 		// TODO Auto-generated method stub
-		return false;
+		return array;
 	}
 	// TODO heapsort
 }

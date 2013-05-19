@@ -9,9 +9,9 @@
 // 1.2. swap elements at positions i and max
 
 public class SelectionSort implements Sort {
-	public boolean sortMe(double[] array) {
-		// TODO Auto-generated method stub
-		return false;
+	public double[] sortMe(double[] array) {
+		
+		return array;
 	}
 	// TODO selection sort
 }

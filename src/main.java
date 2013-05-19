@@ -1,8 +1,21 @@
 // Project 3: Scaling behavior of sorting algorithms 
 // Due Mon May 20
 //
-// Implement Selection, Heap, Merge and QuickSort. Test them on random arrays of increasing orders of magnitude to examine 
-// their scaling behavior. Graph your results. Extrapolate your results and experimentally verify the accuracy of your estimates. 
+// Implement Selection, Heap, Merge and QuickSort. 
+//		SelectionSort, HeapSort, MergeSort, QuickSort classes
+//		TODO
+//
+// Test them on random arrays of increasing orders of magnitude to examine their scaling behavior. 
+// 		main class
+//		TODO
+//
+// Graph your results. 
+//		attached project description
+//		TODO
+//
+// Extrapolate your results and experimentally verify the accuracy of your estimates. 
+//		TODO
+//
 // Here are the details:
 //
 // 1. Construct a class for each sort method using the algorithms on the course web site. Test your code to verify that all the 
@@ -26,7 +39,22 @@
 public class main {
 	// Construct a main driver class that uses a switch statement and
 	// inheritance to run different sort methods.
+	private static boolean	DEBUG	= true;
+	private static double	array[];
+	
 	public static void main(String[] args) {
+		if (DEBUG) {
+			array = new double[] { 45, 32, 12, 19, 40, 9, 56, 23, 3, 22, 18,
+					48, 49, 33, 11, 7 };
+			Sort is = new InsertionSort();
+			double sorted[] = is.sortMe(array);
+			for (int i = 0; i < array.length; i++) {
+				System.out.print(sorted[i] + ", ");
+			}
+		} else {
+			// TODO not debug
+		}
+		
 		// TODO main
 	}
 }
