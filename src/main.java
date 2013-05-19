@@ -47,7 +47,9 @@ public class main {
 			array = new double[] { 45, 32, 12, 19, 40, 9, 56, 23, 3, 22, 18,
 					48, 49, 33, 11, 7 };
 			// Sort is = new InsertionSort(); // completed
-			Sort is = new HeapSort();
+			// Sort is = new HeapSort(); // completed
+			// Sort is = new MergeSort(); // completed
+			Sort is = new QuickSort();
 			double sorted[] = is.sortMe(array);
 			for (int i = 0; i < array.length; i++) {
 				System.out.print(sorted[i] + ", ");
