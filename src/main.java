@@ -39,14 +39,15 @@
 public class main {
 	// Construct a main driver class that uses a switch statement and
 	// inheritance to run different sort methods.
-	private static boolean	DEBUG	= true;
+	public static boolean	DEBUG	= true;
 	private static double	array[];
 	
 	public static void main(String[] args) {
 		if (DEBUG) {
 			array = new double[] { 45, 32, 12, 19, 40, 9, 56, 23, 3, 22, 18,
 					48, 49, 33, 11, 7 };
-			Sort is = new InsertionSort();
+			// Sort is = new InsertionSort(); // completed
+			Sort is = new HeapSort();
 			double sorted[] = is.sortMe(array);
 			for (int i = 0; i < array.length; i++) {
 				System.out.print(sorted[i] + ", ");

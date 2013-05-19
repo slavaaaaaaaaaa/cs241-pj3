@@ -26,6 +26,9 @@
 // 3. at this point, at most one list has elements left; move them all to the end of new list
 // 4. return new list
 
-public class MergeSort {
-	// TODO mergesort
+public class MergeSort implements Sort {
+	public double[] sortMe(double[] array) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
