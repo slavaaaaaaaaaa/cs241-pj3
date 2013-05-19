@@ -3,7 +3,7 @@
 //
 // Implement Selection, Heap, Merge and QuickSort. 
 //		SelectionSort, HeapSort, MergeSort, QuickSort classes
-//		TODO
+//		Done.
 //
 // Test them on random arrays of increasing orders of magnitude to examine their scaling behavior. 
 // 		main class
@@ -20,6 +20,7 @@
 //
 // 1. Construct a class for each sort method using the algorithms on the course web site. Test your code to verify that all the 
 // sort methods work properly. Construct a main driver class that uses a switch statement and inheritance to run different sort methods.
+//	Done.
 //
 // 2. Instrument each algorithm to count comparisons, moves and elapsed time by constructing a SortTimer class as discussed in class. 
 // Use System.nanoTime() and divide by 1,000 to get the clock time in microseconds.
@@ -37,7 +38,7 @@
 // 7. Submit a project report that includes all tables, graphs, code and output.
 
 public class main {
-	// Construct a main driver class that uses a switch statement and
+	// 1. Construct a main driver class that uses a switch statement and
 	// inheritance to run different sort methods.
 	public static boolean	DEBUG	= true;
 	private static double	array[];
@@ -46,18 +47,33 @@ public class main {
 		if (DEBUG) {
 			array = new double[] { 45, 32, 12, 19, 40, 9, 56, 23, 3, 22, 18,
 					48, 49, 33, 11, 7 };
-			// Sort is = new InsertionSort(); // completed
-			// Sort is = new HeapSort(); // completed
-			// Sort is = new MergeSort(); // completed
-			Sort is = new QuickSort();
+			// Sort is = new InsertionSort(); // completed & tested
+			// Sort is = new HeapSort(); // completed & tested
+			// Sort is = new MergeSort(); // completed & tested
+			Sort is = new QuickSort(); // completed & tested
+			
 			double sorted[] = is.sortMe(array);
 			for (int i = 0; i < array.length; i++) {
 				System.out.print(sorted[i] + ", ");
 			}
-		} else {
-			// TODO not debug
 		}
 		
+		String sortkind = "";
+		Sort sortMachine;
+		switch (sortkind) {
+			case "insertion":
+				sortMachine = new InsertionSort();
+				break;
+			case "heap":
+				sortMachine = new HeapSort();
+				break;
+			case "merge":
+				sortMachine = new MergeSort();
+				break;
+			case "quick":
+				sortMachine = new QuickSort();
+				break;
+		}
 		// TODO main
 	}
 }

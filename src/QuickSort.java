@@ -29,8 +29,44 @@
 
 public class QuickSort implements Sort {
 	public double[] sortMe(double[] array) {
-		// TODO Auto-generated method stub
-		return array;
+		// 1. Call recursive quicksort procedure with left=0 and right=n-1
+		return quickSort(array, 0, array.length - 1);
 	}
-	// TODO quicksort
+	
+	private double[] quickSort(double[] data, int left, int right) {
+		// 1. select pivot element in the range left to right
+		// 2. partition list in place so that all elements ²pivot precede those
+		// that are >pivot
+		// 3. let pos be the position of the pivot element after partitioning
+		int pos = partition(data, left, right);
+		// 4. recursively quicksort elements left to pos-1
+		// 5. recursively quicksort elements pos+1 to right
+		if (left < pos - 1)
+			quickSort(data, left, pos - 1);
+		if (pos < right)
+			quickSort(data, pos, right);
+		
+		return data;
+	}
+	
+	private int partition(double[] data, int left, int right) {
+		int i = left, j = right;
+		double pivot = data[(left + right) / 2];
+		
+		while (i <= j) {
+			while (data[i] < pivot)
+				i++;
+			while (data[j] > pivot)
+				j--;
+			if (i <= j) {
+				double temp = data[i];
+				data[i] = data[j];
+				data[j] = temp;
+				i++;
+				j--;
+			}
+		}
+		
+		return i;
+	}
 }
