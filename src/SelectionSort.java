@@ -22,11 +22,12 @@ public class SelectionSort implements Sort {
 					max = j;
 			}
 			// 1.2. swap elements at positions i and max
-			st.addMoves(2);
+			st.addMoves(3);
 			double temp = array[i];
 			array[i] = array[max];
 			array[max] = temp;
 		}
+		// System.out.println(st.getMoves());
 		// return array;
 		return st.getElapsedTime();
 	}

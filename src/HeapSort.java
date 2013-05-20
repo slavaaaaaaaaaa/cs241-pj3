@@ -32,7 +32,7 @@ public class HeapSort implements Sort {
 	}
 	
 	public void swap(int a, int b) {
-		st.addMoves(2);
+		st.addMoves(3);
 		double temp = heap[a];
 		heap[a] = heap[b];
 		heap[b] = temp;

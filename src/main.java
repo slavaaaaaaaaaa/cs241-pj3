@@ -101,6 +101,5 @@ public class main {
 						+ sortMachine.st.getMoves() + "\n");
 			}
 		}
-		// TODO main
 	}
 }

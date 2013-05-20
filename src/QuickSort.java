@@ -54,6 +54,7 @@ public class QuickSort implements Sort {
 	private int partition(double[] data, int left, int right) {
 		int i = left, j = right;
 		double pivot = data[(left + right) / 2];
+		st.addMove();
 		
 		while (i <= j) {
 			while (data[i] < pivot) {
