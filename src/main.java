@@ -14,7 +14,7 @@
 //		Done
 //
 // Extrapolate your results and experimentally verify the accuracy of your estimates. 
-//		TODO
+//		Done
 //
 // Here are the details:
 //
@@ -34,13 +34,15 @@
 //  Done, in estimations.xls - "Sort Runs" sheet.
 //
 // 5. Use the information obtained to estimate the time and count for n = 10^5 and 10^6.
-// 
+//  Done, in estimations.xls
 //
 // 6. Now run Selection sort for n = 5 and the other three methods for n = 6 and calculate 
 // the relative error of your estimates. Report your results in a table.
+//  Done, in estimations.xls
 //
 // 7. Submit a project report that includes all tables, graphs, code and output.
-
+//
+//
 public class main {
 	// 1. Construct a main driver class that uses a switch statement and
 	// inheritance to run different sort methods.
