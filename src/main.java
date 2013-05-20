@@ -10,8 +10,8 @@
 //		Done
 //
 // Graph your results. 
-//		attached project description
-//		TODO
+//		attached project description and estimations.xls
+//		Done
 //
 // Extrapolate your results and experimentally verify the accuracy of your estimates. 
 //		TODO
@@ -28,11 +28,13 @@
 //
 // 3. Run your code on random arrays of size n = 10^i, i = 1. . .4. Run five instances of each sample size and take the average 
 // of each measure.
-// 
+//  Done, in estimations.xls - "Sort Runs" sheet.
 //
 // 4. Plot the elapsed time and comparison count against n using a decimal logarithmic scale on each axis.
+//  Done, in estimations.xls - "Sort Runs" sheet.
 //
 // 5. Use the information obtained to estimate the time and count for n = 10^5 and 10^6.
+// 
 //
 // 6. Now run Selection sort for n = 5 and the other three methods for n = 6 and calculate 
 // the relative error of your estimates. Report your results in a table.
